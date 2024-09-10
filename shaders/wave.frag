@@ -10,13 +10,15 @@ uniform float iTime;
 void mainImage()
 {
 	// Get the UV Coordinate of your texture or Screen Texture, yo!
-	vec2 uv = fragCoord.xy / iResolution.xy;
+	// vec2 uv = fragCoord.xy / iResolution.xy;
 
 	// Flip that shit, cause shadertool be all "yolo opengl"
-	uv.y = -1.0 - uv.y;
+	uv.y += sin(uv.x*10.0+iTime)/10.0;
 
 	// Modify that X coordinate by the sin of y to oscillate back and forth up in this.
 	uv.x += sin(uv.y*10.0+iTime)/10.0;
+
+	// uv.y += sin(uv.x*10.0+iTime)/10.0;
 
 	// The theory be that you turn this sucka into basically a graph
 	// (like on them TI-80 whatevers)
