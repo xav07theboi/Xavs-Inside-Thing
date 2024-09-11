@@ -11,12 +11,12 @@ void mainImage()
 {
 	// Get the UV Coordinate of your texture or Screen Texture, yo!
 	// vec2 uv = fragCoord.xy / iResolution.xy;
-
+	float intensity = 5.0;
 	// Flip that shit, cause shadertool be all "yolo opengl"
-	uv.y += sin(uv.x*10.0+iTime)/10.0;
+	uv.y += sin(uv.x*intensity+iTime)/intensity;
 
 	// Modify that X coordinate by the sin of y to oscillate back and forth up in this.
-	uv.x += sin(uv.y*10.0+iTime)/10.0;
+	uv.x += sin(uv.y*intensity+iTime)/intensity;
 
 	// uv.y += sin(uv.x*10.0+iTime)/10.0;
 

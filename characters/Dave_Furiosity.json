@@ -2,76 +2,76 @@
 	"animations": [
 		{
 			"offsets": [
-				-1,
-				0
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "idle",
-			"loop": false,
-			"name": "idle"
-		},
-		{
-			"offsets": [
-				-10,
-				-33
+				16,
+				-12
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singLEFT",
 			"loop": false,
-			"name": "left"
+			"name": "LEFT"
 		},
 		{
 			"offsets": [
-				60,
-				20
+				16,
+				-12
 			],
 			"indices": [],
 			"fps": 24,
-			"anim": "singRIGHT",
-			"loop": false,
-			"name": "right"
+			"anim": "idle",
+			"loop": true,
+			"name": "IDLE"
 		},
 		{
 			"offsets": [
-				-30,
-				30
+				16,
+				-12
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singDOWN",
 			"loop": false,
-			"name": "down"
+			"name": "DOWN"
 		},
 		{
 			"offsets": [
-				14,
-				1
+				16,
+				-12
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singUP",
 			"loop": false,
-			"name": "up"
+			"name": "UP"
+		},
+		{
+			"offsets": [
+				16,
+				-12
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "RIGHT"
 		}
 	],
 	"vocals_file": "",
 	"no_antialiasing": false,
-	"image": "characters/bambi_pissyboy",
+	"image": "characters/Dave_Furiosity",
 	"position": [
 		0,
 		0
 	],
-	"healthicon": "bambipissed3d",
+	"healthicon": "furiousdave",
 	"flip_x": false,
 	"healthbar_colors": [
-		0,
-		255,
-		0
+		249,
+		180,
+		207
 	],
 	"camera_position": [
-		-130,
+		0,
 		0
 	],
 	"sing_duration": 4,

@@ -33,7 +33,7 @@ function onUpdate()
         setPropertyFromGroup(daName, i, 'scale.x', getPropertyFromGroup(daName, i, 'scale.x') * 1.5)
         setPropertyFromGroup(daName, i, 'scale.y', getPropertyFromGroup(daName, i, 'scale.y') * 1.5)
 
-	    doTweenY(dadTweenY, 'dad', 290-130*math.sin((currentBeat*0.25)*math.pi),0.001)
+	    doTweenY(dadTweenY, 'dad', 0-130*math.sin((currentBeat*0.25)*math.pi),0.001)
       end
     end
     for i = 0, getProperty('notes.length')-1 do

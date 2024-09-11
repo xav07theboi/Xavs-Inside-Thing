@@ -1,0 +1,52 @@
+{
+	"dialogue": [
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "angrydude",
+			"boxState": "angry",
+			"expression": "talk",
+			"text": "THERE YOU ARE!!!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Beep?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "angrydude",
+			"boxState": "angry",
+			"expression": "talk",
+			"text": "DAVE SENT ME TO GET YOU!!!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "angrydude",
+			"boxState": "angry",
+			"expression": "talk",
+			"text": "SAYS YOU NOT ALLOWED HERE!!!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Bap!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "angrydude",
+			"boxState": "angry",
+			"expression": "talk",
+			"text": "YOU GONNA DISRUPT THIS 3D WORLD!!!!!"
+		}
+	]
+}

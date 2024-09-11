@@ -1,5 +1,5 @@
 function onCreate()
-	makeLuaSprite('disruptor', 'disruptor', -500, -100);
+	makeLuaSprite('disruptor', 'redsky', -500, -100);
 	setScrollFactor('disruptor', 0, 0);
 	addLuaSprite('disruptor');
 	initLuaShader('wave')

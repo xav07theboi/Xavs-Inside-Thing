@@ -1,0 +1,52 @@
+{
+	"dialogue": [
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "lI ll II II l ll I"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "lI ll II II l ll IllIIllI ll l l II II l llIllII lI Il ll I IIl llI I"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "ll Il II I lI lll lI lI lII IlI llIl I llll I IllI lll I Il I lI I I lI llIll l I IIl llI I lll ll Il IIl llI I llIlll Il II l IlI lI I lI lll Il I Il I IIll I lI Il lllI l I II llIl lII l I ll"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Il lI llll Ill l ll Il II IlI lll I llII l I Il lll II l lI I II l l I IIl l"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "ll III l Il lI lI lll ll Il II I lI lll Ill l I II I ll IlI llllll II I llIl lI lI lll II l Il lIl I llll IlI lI llI ll II llI llI lI lll Ill I lI lllI Il II l I I lIl lll ll II llll ll Il II l I IllI llll l IlI lI II l I lll I Ill IllI Il I llI lll I l II lll IlIll"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "shocked",
+			"text": "B-beep..?"
+		}
+	]
+}
