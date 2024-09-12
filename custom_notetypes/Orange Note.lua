@@ -17,7 +17,6 @@ function onGameOver()
 		noteTweenAlpha("reviveup", 6, nil, 1.0, "Linear")
 		noteTweenAlpha("reviveright", 7, nil, 1.0, "Linear")
 		Lives = Lives - 1
-		debugPrint(Lives)
 		return false
 	end
 end
