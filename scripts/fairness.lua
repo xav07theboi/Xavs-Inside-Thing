@@ -6,7 +6,7 @@ function opponentNoteHit()
     elseif ghostTapping == false then
         multiplier = 0
     end
-    if health > (0.01*multiplier) or not misses > 0 then
+    if health > (0.01*multiplier) or misses > 0 then
         setProperty('health', health-(0.01*multiplier));
     end
 end
