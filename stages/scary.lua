@@ -4,12 +4,16 @@ function onCreate()
 	addLuaSprite('disruptor');
 	initLuaShader('wave')
 	screenCenter('disruptor')
-	setSpriteShader('disruptor', 'wave')
+	if shadersEnabled == true then
+		setSpriteShader('disruptor', 'wave')
+	end
 	thing = 1
 	total = 0
 	function onUpdate(elapsed)
 		--if thing == 1 then
-		total = total + (elapsed*playbackRate)
+		if shadersEnabled == true then
+			total = total + (elapsed*playbackRate)
+		end
             setShaderFloat('disruptor', 'iTime', total)
 			--[[thing = 2
 		else
