@@ -9,7 +9,7 @@ function onCreate()
 	total = 0
 	function onUpdate(elapsed)
 		--if thing == 1 then
-		total = total + elapsed
+		total = total + (elapsed*playbackRate)
             setShaderFloat('disruptor', 'iTime', total)
 			--[[thing = 2
 		else
