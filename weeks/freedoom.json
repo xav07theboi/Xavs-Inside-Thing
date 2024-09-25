@@ -1,0 +1,50 @@
+{
+	"storyName": "FREEDOOM",
+	"difficulties": "Normal",
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"D_RUNNIN",
+			"dad",
+			[
+				0,
+				20,
+				0
+			]
+		],
+		[
+			"D_COUNTD",
+			"dad",
+			[
+				0,
+				20,
+				0
+			]
+		],
+		[
+			"D_THE_DA",
+			"dad",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "FreeDoom",
+	"hiddenUntilUnlocked": false
+}

@@ -1,0 +1,4 @@
+rgbShader.r = 0xFF0000
+rgbShader.g = 0x000000
+rgbShader.b = 0x000000
+hitsound = "confirmMenu"

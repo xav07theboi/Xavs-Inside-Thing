@@ -1,0 +1,6 @@
+rgbShader.r = 0x000000
+rgbShader.g = 0x000000
+rgbShader.b = 0xFF0000
+hitCausesMiss = true
+ignoreNote = true
+missHealth = 500
