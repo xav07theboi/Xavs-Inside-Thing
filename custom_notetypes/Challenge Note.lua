@@ -16,6 +16,9 @@ function onCreate()
 end
 function goodNoteHit(membersIndex, noteData, noteType, isSustainNote)
     if noteType == "Challenge Note" then
+        if isSustainNote == true then
+            return
+        end
         makeup = makeup + getMisses()-madeup
         runTimer("challenge",10,0)
         doTweenAlpha("yeah", "chaltext", 1.0, 1.0/framerate, "Linear")
@@ -39,7 +42,7 @@ end
 --- @param isSustainNote bool
 ---
 function noteMiss(membersIndex, noteData, noteType, isSustainNote)
-    if noteType == "Challenge Note" then
+    if noteType == "Challenge Note" and isSustainNote == false then
         badmiss = badmiss + 1
         madeup = -10 * badmiss
         makeup = makeup + getMisses()+(10*badmiss)
