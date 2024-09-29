@@ -1,0 +1,18 @@
+[
+	{
+		"save": "missedchallengenote", 
+		"name": "Test Achievement 2",
+		"description": "miss 40 challenge notes\nand finish the challenges.",
+		"maxScore": 40,
+		"maxDecimals": 0, 
+		"hidden": false
+	},
+    {
+		"save": "d_runninperfection", 
+		"name": "D_RUNNIN Perfection",
+		"description": "complete d_runnin with perfect accuracy",
+		"maxScore": 100,
+		"maxDecimals": 2, 
+		"hidden": false
+	}
+]

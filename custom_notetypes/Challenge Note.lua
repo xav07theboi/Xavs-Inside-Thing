@@ -1,6 +1,7 @@
 madeup = 0
 makeup = 0
 badmiss = 0
+unlockable = false
 ---
 --- @param membersIndex int
 --- @param noteData int
@@ -31,6 +32,10 @@ function goodNoteHit(membersIndex, noteData, noteType, isSustainNote)
          end
     end
     if makeup == 0 then
+        if unlockable == true then
+            addAchievementScore("missedchallengenote",1)
+            unlockable = false
+        end
         cancelTimer("challenge")
         doTweenAlpha("yeah", "chaltext", nil, 1.0, "Linear")
     end
@@ -43,6 +48,7 @@ end
 ---
 function noteMiss(membersIndex, noteData, noteType, isSustainNote)
     if noteType == "Challenge Note" and isSustainNote == false then
+        unlockable = true
         badmiss = badmiss + 1
         madeup = -10 * badmiss
         makeup = makeup + getMisses()+(10*badmiss)

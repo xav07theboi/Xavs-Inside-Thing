@@ -3,14 +3,18 @@
 	"difficulties": "hard",
 	"hideFreeplay": false,
 	"weekBackground": "",
-	"weekBefore": "week7",
 	"freeplayColor": [
 		146,
 		113,
 		253
 	],
+	"weekBefore": "week7",
 	"startUnlocked": false,
-	"hideStoryMode": false,
+	"weekCharacters": [
+		"bf",
+		"bf",
+		"bf"
+	],
 	"songs": [
 		[
 			"Test",
@@ -18,33 +22,38 @@
 			[
 				146,
 				113,
-				253
+				233
+			]
+		],
+		[
+			"Poopers",
+			"awesome-son",
+			[
+				255,
+				0,
+				0
 			]
 		],
 		[
 			"Disruption",
 			"bambipissed3d",
 			[
-				146,
-				113,
-				253
+				0,
+				255,
+				0
 			]
 		],
 		[
 			"Furiosity",
 			"furiousdave",
 			[
-				146,
-				113,
-				253
+				20,
+				0,
+				0
 			]
 		]
 	],
-	"weekCharacters": [
-		"bf",
-		"bf",
-		"bf"
-	],
-	"hiddenUntilUnlocked": false,
-	"weekName": "Custom Week"
+	"hideStoryMode": false,
+	"weekName": "Custom Week",
+	"hiddenUntilUnlocked": false
 }

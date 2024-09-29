@@ -1,4 +1,7 @@
 function opponentNoteHit()
+    if songName == "Poopers" then
+        return
+    end
     health = getProperty('health')
     multiplier = 1 - getProperty('ratingPercent')
     if getProperty('cpuControlled') == true then
