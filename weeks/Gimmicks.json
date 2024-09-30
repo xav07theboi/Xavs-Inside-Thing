@@ -3,18 +3,14 @@
 	"difficulties": "hard",
 	"hideFreeplay": false,
 	"weekBackground": "",
+	"weekBefore": "week7",
 	"freeplayColor": [
 		146,
 		113,
 		253
 	],
-	"weekBefore": "week7",
 	"startUnlocked": false,
-	"weekCharacters": [
-		"bf",
-		"bf",
-		"bf"
-	],
+	"hideStoryMode": false,
 	"songs": [
 		[
 			"Test",
@@ -26,12 +22,12 @@
 			]
 		],
 		[
-			"Poopers",
-			"awesome-son",
+			"Tutorial",
+			"gf",
 			[
-				255,
+				95,
 				0,
-				0
+				40
 			]
 		],
 		[
@@ -44,16 +40,29 @@
 			]
 		],
 		[
-			"Furiosity",
-			"furiousdave",
+			"Poopers",
+			"awesome-son",
 			[
-				20,
+				255,
 				0,
 				0
 			]
+		],
+		[
+			"Furiosity",
+			"furiousdave",
+			[
+				0,
+				255,
+				255
+			]
 		]
 	],
-	"hideStoryMode": false,
-	"weekName": "Custom Week",
-	"hiddenUntilUnlocked": false
+	"weekCharacters": [
+		"bf",
+		"bf",
+		"bf"
+	],
+	"hiddenUntilUnlocked": false,
+	"weekName": "SUPERXAVSSGIMMCKerytttt"
 }

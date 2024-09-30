@@ -1,0 +1,2 @@
+Value 1: how long until jiggling stops. (0 for forever)
+Value 2: how much the intensity should decrease.

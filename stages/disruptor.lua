@@ -6,6 +6,7 @@ function onCreate()
 	screenCenter('disruptor')
 	if shadersEnabled == true then
 		setSpriteShader('disruptor', 'wave')
+		setShaderFloat("disruptor", "intensity", 5.0)
 	end
 	thing = 1
 	total = 0

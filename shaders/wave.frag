@@ -3,6 +3,7 @@ vec2 uv = openfl_TextureCoordv.xy;
 vec2 fragCoord = openfl_TextureCoordv*openfl_TextureSize;
 vec2 iResolution = openfl_TextureSize;
 uniform float iTime;
+uniform float intensity;
 #define iChannel0 bitmap
 #define texture flixel_texture2D
 #define fragColor gl_FragColor
@@ -11,7 +12,6 @@ void mainImage()
 {
 	// Get the UV Coordinate of your texture or Screen Texture, yo!
 	// vec2 uv = fragCoord.xy / iResolution.xy;
-	float intensity = 5.0;
 	// Flip that shit, cause shadertool be all "yolo opengl"
 	uv.y += sin(uv.x*intensity+iTime)/intensity;
 
