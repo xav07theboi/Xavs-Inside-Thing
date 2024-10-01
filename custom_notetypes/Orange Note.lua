@@ -2,7 +2,12 @@ percent = 0
 Lives = 0
 function goodNoteHit(id, noteData, noteType, isSustainNote)
 	if noteType == 'Orange Note' then
-		percent = percent + (0.1*rating)
+		if botPlay == true then
+			percent = percent + (0.1)
+		else
+			percent = percent + (0.1*rating)
+		end
+		
 		if percent > 1 then
 			Lives = Lives + 1
 			percent = 0
