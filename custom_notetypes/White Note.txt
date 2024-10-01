@@ -1,0 +1,4 @@
+rgbShader.r = 0xFFFFFF
+rgbShader.g = 0x000000
+rgbShader.b = 0x000000
+missHealth = 0
