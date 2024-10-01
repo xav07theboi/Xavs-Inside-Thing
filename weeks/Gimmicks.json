@@ -3,7 +3,7 @@
 	"difficulties": "hard",
 	"hideFreeplay": false,
 	"weekBackground": "",
-	"weekBefore": "week7",
+	"weekBefore": "freedoom",
 	"freeplayColor": [
 		146,
 		113,
@@ -25,9 +25,9 @@
 			"Tutorial",
 			"gf",
 			[
-				95,
 				0,
-				40
+				0,
+				0
 			]
 		],
 		[
@@ -40,21 +40,21 @@
 			]
 		],
 		[
+			"Furiosity",
+			"furiousdave",
+			[
+				20,
+				0,
+				0
+			]
+		],
+		[
 			"Poopers",
 			"awesome-son",
 			[
 				255,
 				0,
 				0
-			]
-		],
-		[
-			"Furiosity",
-			"furiousdave",
-			[
-				0,
-				255,
-				255
 			]
 		]
 	],

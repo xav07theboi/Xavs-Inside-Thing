@@ -26,6 +26,17 @@ function onTimerCompleted(tag, loops, loopsLeft)
 end
 function onGameOver()
     if nodeath then
+        if getHealth() < 0 then
+            setHealth(0)
+        end
         return Function_Stop
+    end
+end
+---
+--- @param elapsed float
+---
+function onUpdate(elapsed)
+    if getHealth() > 0.1*elapsed and flashingLights == false then
+        setHealth(getHealth()-0.1*elapsed)
     end
 end
