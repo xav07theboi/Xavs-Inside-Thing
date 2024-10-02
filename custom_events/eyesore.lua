@@ -8,17 +8,29 @@ total = 0
 intensity = 10
 decrement = 0
 completion = 0
+function opponentNoteHit(membersIndex, noteData, noteType, isSustainNote)
+    if completion > total then
+        cameraShake("hud", 0.025, 0.1)
+        cameraShake("game", 0.05, 0.1)
+    end
+end
 ---
---- @param character string
+--- @param membersIndex int
+--- @param noteData int
+--- @param noteType string
+--- @param isSustainNote bool
 ---
-function onMoveCamera(character)
-    
+function goodNoteHit(membersIndex, noteData, noteType, isSustainNote)
+    if completion > total then
+        cameraShake("hud", 0.025, 0.1)
+        cameraShake("game", 0.05, 0.1)
+    end
 end
 function onUpdate(elapsed)
     total = total + (elapsed*playbackRate)
     setShaderFloat('camShader', 'uTime', total)
     if total > completion then
-        setShaderFloat("camShader", "uampmul", getShaderFloat("camShader", "uampmul")-elapsed)
+        setShaderFloat("camShader", "uampmul", getShaderFloat("camShader", "uampmul")-(elapsed*0.5))
     else
         characterPlayAnim("gf", "scared")
     end
@@ -45,8 +57,6 @@ function onEvent(eventName, value1, value2, strumTime)
         ]])
         decrement = value2
         completion = total+value1
-        cameraShake("hud", 0.025, value1)
-        cameraShake("game", 0.05, value1)
     end
 end
 function onDestroy()

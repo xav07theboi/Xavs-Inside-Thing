@@ -45,5 +45,6 @@ function onUpdate()
 end
 
 function opponentNoteHit()
-	triggerEvent('Screen Shake', '0.1, 0.01', '0.1, 0.01');
+  cameraShake("game", 0.01, 0.1)
+  cameraShake("hud", 0.01, 0.1)
 end
