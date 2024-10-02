@@ -7,16 +7,35 @@
 total = 0
 intensity = 10
 decrement = 0
+completion = 0
+---
+--- @param character string
+---
+function onMoveCamera(character)
+    
+end
+function onUpdate(elapsed)
+    total = total + (elapsed*playbackRate)
+    setShaderFloat('camShader', 'uTime', total)
+    if total > completion then
+        setShaderFloat("camShader", "uampmul", getShaderFloat("camShader", "uampmul")-elapsed)
+    else
+        characterPlayAnim("gf", "scared")
+    end
+end
 function onEvent(eventName, value1, value2, strumTime)
     debugPrint(value1)
-    if shadersEnabled then  
+    if shadersEnabled and flashingLights then  
         removeLuaSprite("camShader")
-        local var ShaderName = 'wave'
+        local var ShaderName = 'pulse'
         initLuaShader(ShaderName)
         makeLuaSprite('camShader', nil)
         makeGraphic('camShader', screenWidth, screenHeight)
         setSpriteShader('camShader', ShaderName)
-        setShaderFloat("camShader", "intensity", 0.0)
+        setShaderFloat("camShader", "uSpeed", 1.0)
+		setShaderFloat("camShader", "uFrequency", 2.0)
+		setShaderFloat("camShader", "uWaveAmplitude", 1.0)
+		setShaderFloat("camShader", "uampmul", value2)
         runHaxeCode([[
             FlxG.game.setFilters([]);
         ]])
@@ -25,28 +44,10 @@ function onEvent(eventName, value1, value2, strumTime)
             FlxG.game.setFilters([new ShaderFilter(game.getLuaObject('camShader').shader)]);
         ]])
         decrement = value2
-        cancelTimer("waveytimsdeols")
-        if value1 > 0 then
-            runTimer("waveytimsdeols",value1,1)
-        end
+        completion = total+value1
+        cameraShake("hud", 0.025, value1)
+        cameraShake("game", 0.05, value1)
     end
-end
-function onTimerCompleted(tag, loops, loopsLeft)
-    if tag == "waveytimsdeols" then
-        setProperty('camGame.filtersEnabled', false)
-        removeSpriteShader("camShader")
-        setProperty('camGame.filtersEnabled', false)
-        removeLuaSprite("camShader")
-        setProperty('camGame.filtersEnabled', false)
-        runHaxeCode([[
-            FlxG.game.setFilters([]);
-        ]])
-    end
-end
-function onUpdate(elapsed)
-    total = total + (elapsed*playbackRate)
-    setShaderFloat('camShader', 'iTime', total)
-    setShaderFloat("camShader", "intensity", getShaderFloat("camShader", "intensity")+(elapsed*playbackRate*decrement))
 end
 function onDestroy()
     if shadersEnabled then

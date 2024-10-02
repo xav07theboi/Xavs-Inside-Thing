@@ -1,12 +1,14 @@
 function onCreate()
-	makeLuaSprite('disruptor', 'redsky', -500, -100);
-	setScrollFactor('disruptor', 0, 0);
+	makeLuaSprite('disruptor', 'redsky', -600, -200);
+	setScrollFactor('disruptor', 1, 1);
 	addLuaSprite('disruptor');
-	initLuaShader('wave')
+	initLuaShader('glitch')
 	screenCenter('disruptor')
 	if shadersEnabled == true then
-		setSpriteShader('disruptor', 'wave')
-		setShaderFloat("disruptor", "intensity", 10.0)
+		setSpriteShader('disruptor', 'glitch')
+		setShaderFloat("disruptor", "waveAmplitude", 0.1)
+		setShaderFloat("disruptor", "waveFrequency", 5)
+		setShaderFloat("disruptor", "waveSpeed", 2)
 	end
 	thing = 1
 	total = 0
@@ -18,23 +20,11 @@ function onCreate()
 		if shadersEnabled == true then
 			total = total + (elapsed*playbackRate)
 		end
-		if flashingLights then
-			intensity = intensity + (elapsed*playbackRate*5)
-			setShaderFloat("disruptor", "intensity", intensity)
-		end
-		setShaderFloat('disruptor', 'iTime', total)
+		setShaderFloat('disruptor', 'uTime', os.clock())
 			--[[thing = 2
 		else
 			setShaderFloat('disruptor', 'iTime', os.clock()*2)
 			thing = 1
 		end]]
-	end
-	function opponentNoteHit(membersIndex, noteData, noteType, isSustainNote)
-		if flashingLights then
-			intensity = intensity-1
-			if intensity < 1 then
-				intensity = 1
-			end
-		end
 	end
 end
