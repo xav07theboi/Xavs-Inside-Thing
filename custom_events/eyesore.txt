@@ -1,2 +1,2 @@
-Value 1: how long until jiggling stops. (0 for forever)
-Value 2: how much the intensity should decrease.
+Value 1: how long until eyesore goes away
+Value 2: how long it takes for the eyesore to fade away (after value 1)

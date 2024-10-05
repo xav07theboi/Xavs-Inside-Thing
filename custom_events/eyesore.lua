@@ -8,6 +8,15 @@ total = 0
 intensity = 10
 decrement = 0
 completion = 0
+function callShader(func,vars)
+    callScript('extra_scripts/createShader',func,vars)
+end
+function onCreate()
+    addLuaScript('extra_scripts/createShader')
+    callShader('createShader',{'eyecantsee','pulse'})
+    callShader('runShader',{'game',{'eyecantsee'}})
+    callShader('runShader',{'hud',{'eyecantsee'}})
+end
 function opponentNoteHit(membersIndex, noteData, noteType, isSustainNote)
     if completion > total then
         cameraShake("hud", 0.025, 0.1)
@@ -27,10 +36,11 @@ function goodNoteHit(membersIndex, noteData, noteType, isSustainNote)
     end
 end
 function onUpdate(elapsed)
-    total = total + (elapsed*playbackRate)
-    setShaderFloat('camShader', 'uTime', total)
+    elapsed = elapsed*playbackRate
+    total = total + elapsed
+    setShaderFloat('eyecantsee', 'uTime', total)
     if total > completion then
-        setShaderFloat("camShader", "uampmul", getShaderFloat("camShader", "uampmul")-(elapsed*0.5))
+        setShaderFloat("eyecantsee", "uampmul", getShaderFloat("eyecantsee", "uampmul")-(elapsed*decrement))
     else
         characterPlayAnim("gf", "scared")
     end
@@ -38,24 +48,11 @@ end
 function onEvent(eventName, value1, value2, strumTime)
     debugPrint(value1)
     if shadersEnabled and flashingLights then  
-        removeLuaSprite("camShader")
-        local var ShaderName = 'pulse'
-        initLuaShader(ShaderName)
-        makeLuaSprite('camShader', nil)
-        makeGraphic('camShader', screenWidth, screenHeight)
-        setSpriteShader('camShader', ShaderName)
-        setShaderFloat("camShader", "uSpeed", 1.0)
-		setShaderFloat("camShader", "uFrequency", 2.0)
-		setShaderFloat("camShader", "uWaveAmplitude", 1.0)
-		setShaderFloat("camShader", "uampmul", value2)
-        runHaxeCode([[
-            FlxG.game.setFilters([]);
-        ]])
-        runHaxeCode([[
-            trace(game.getLuaObject('camShader').shader + ' Has Been Loaded!');                      
-            FlxG.game.setFilters([new ShaderFilter(game.getLuaObject('camShader').shader)]);
-        ]])
-        decrement = value2
+        setShaderFloat("eyecantsee", "uSpeed", 1.0)
+        setShaderFloat("eyecantsee", "uFrequency", 2.0)
+        setShaderFloat("eyecantsee", "uWaveAmplitude", 1.0)
+        setShaderFloat("eyecantsee", "uampmul", 1.0)
+        decrement = 1/value2
         completion = total+value1
     end
 end
