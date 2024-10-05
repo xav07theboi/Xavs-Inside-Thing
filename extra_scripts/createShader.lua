@@ -49,34 +49,6 @@ end
 
 function loadShaderVars(lua,shader)
     runningShaders[lua] = shader
-    if shader == 'TvEffect' then
-        setShaderFloat(lua,'vignetteIntensity',0.025)
-        setShaderFloat(lua,'chromIntensity',0.004)
-        setShaderFloat(lua,'tvIntensity',0.001)
-        setShaderFloat(lua,'tvFrequency',0.1)
-        setShaderFloat(lua,'tvDistorcion',0.2)
-        setShaderBool(lua,'lineTv',false)
-        setShaderFloat(lua,'lineFrequency',0.4)
-        setShaderFloat(lua,'lineSize',0.025)
-        setShaderFloat(lua,'lineOffset',0.005)
-        setShaderFloat(lua,'lineSpace',0.7)
-        setShaderFloat(lua,'multiply',1)
-        setShaderBool(lua,'vignetteFollowAlpha',true)
-    elseif shader == "MirrorEffect" then
-        setShaderFloat(lua,'zoom',1)
-        setShaderFloat(lua,'x',0)
-        setShaderFloat(lua,'y',0)
-    elseif shader == 'MosaicEffect' then
-        setShaderFloat(lua,'pixelStrength',0)
-    elseif shader== 'ColorFillShader' then
-        setShaderFloat(lua,'red',255)
-        setShaderFloat(lua,'blue',255)
-        setShaderFloat(lua,'green',255)
-        setShaderFloat(lua,'fade',1)
-    elseif shader == 'GlitchEffect' then
-        setShaderFloat(lua,'uTime',0)
-        setShaderFloat(lua,'intensity',0)
-    end
 end
 
 function runShader(camera,shader,add)
