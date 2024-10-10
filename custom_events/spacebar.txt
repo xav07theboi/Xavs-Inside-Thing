@@ -1,0 +1,2 @@
+Value 1: maximum time in seconds the event lasts for
+Value 2: how much health the maximum time takes away

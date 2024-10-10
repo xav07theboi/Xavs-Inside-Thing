@@ -47,7 +47,7 @@ function onUpdate(elapsed)
 end
 function onEvent(eventName, value1, value2, strumTime)
     debugPrint(value1)
-    if shadersEnabled and flashingLights then  
+    if shadersEnabled and flashingLights and eventName == "eyesore" then  
         setShaderFloat("eyecantsee", "uSpeed", 1.0)
         setShaderFloat("eyecantsee", "uFrequency", 2.0)
         setShaderFloat("eyecantsee", "uWaveAmplitude", 1.0)

@@ -231,7 +231,7 @@ function runShaderCamera(camera)
 end
 
 local elapTime = 0
-function onUpdate(el)
+--[[function onUpdate(el)
     elapTime = elapTime + el
     for lua, shader in pairs(runningShaders) do
         if shader == 'TvEffect' then
@@ -260,7 +260,7 @@ function onUpdate(el)
             table.remove(changeCharacterEvents,event)
         end
     end
-end
+end]]
 
 function cancelShaderTween(tween)
     if shaderTweens[tween] ~= nil then
