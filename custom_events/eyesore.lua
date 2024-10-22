@@ -8,15 +8,17 @@ total = 0
 intensity = 10
 decrement = 0
 completion = 0
-function callShader(func,vars)
-    callScript('extra_scripts/createShader',func,vars)
-end
 function onCreate()
-    addLuaScript('extra_scripts/createShader')
-    callShader('createShader',{'eyecantsee','pulse'})
-    callShader('runShader',{'game',{'eyecantsee'}})
-    callShader('runShader',{'hud',{'eyecantsee'}})
-end
+    local var ShaderName = 'pulse'
+        initLuaShader(ShaderName)
+        makeLuaSprite('camShader', nil)
+        makeGraphic('camShader', screenWidth, screenHeight)
+        setSpriteShader('camShader', ShaderName)
+        runHaxeCode([[
+            trace(game.getLuaObject('camShader').shader + ' Has Been Loaded!');                      
+            FlxG.game.setFilters([new ShaderFilter(game.getLuaObject('camShader').shader)]);
+        ]])
+    end
 function opponentNoteHit(membersIndex, noteData, noteType, isSustainNote)
     if completion > total then
         cameraShake("hud", 0.025, 0.1)
@@ -38,9 +40,9 @@ end
 function onUpdate(elapsed)
     elapsed = elapsed*playbackRate
     total = total + elapsed
-    setShaderFloat('eyecantsee', 'uTime', total)
+    setShaderFloat('camShader', 'uTime', total)
     if total > completion then
-        setShaderFloat("eyecantsee", "uampmul", getShaderFloat("eyecantsee", "uampmul")-(elapsed*decrement))
+        setShaderFloat("camShader", "uampmul", getShaderFloat("camShader", "uampmul")-(elapsed*decrement))
     else
         characterPlayAnim("gf", "scared")
     end
@@ -48,10 +50,10 @@ end
 function onEvent(eventName, value1, value2, strumTime)
     debugPrint(value1)
     if shadersEnabled and flashingLights and eventName == "eyesore" then  
-        setShaderFloat("eyecantsee", "uSpeed", 1.0)
-        setShaderFloat("eyecantsee", "uFrequency", 2.0)
-        setShaderFloat("eyecantsee", "uWaveAmplitude", 1.0)
-        setShaderFloat("eyecantsee", "uampmul", 1.0)
+        setShaderFloat("camShader", "uSpeed", 1.0)
+        setShaderFloat("camShader", "uFrequency", 2.0)
+        setShaderFloat("camShader", "uWaveAmplitude", 1.0)
+        setShaderFloat("camShader", "uampmul", 1.0)
         decrement = 1/value2
         completion = total+value1
     end
