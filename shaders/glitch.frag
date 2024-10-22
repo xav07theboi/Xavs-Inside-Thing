@@ -19,6 +19,7 @@
      * How much the pixels are going to stretch over the waves
      */
     uniform float uWaveAmplitude;
+    uniform float uBottomProtection;
 
     vec2 sineWave(vec2 pt)
     {
@@ -27,8 +28,8 @@
         
         float offsetX = sin(pt.y * uFrequency + uTime * uSpeed) * (uWaveAmplitude / pt.x * pt.y);
         float offsetY = sin(pt.x * uFrequency - uTime * uSpeed) * (uWaveAmplitude / pt.y * pt.x);
-        pt.x += offsetX; // * (pt.y - 1.0); // <- Uncomment to stop bottom part of the screen from moving
-        pt.y += offsetY;
+        pt.x += offsetX * clamp(pt.y - 1.0/uBottomProtection,-1.0,0.0); // <- Uncomment to stop bottom part of the screen from moving
+        pt.y += offsetY * clamp(pt.y - 1.0/uBottomProtection,-1.0,0.0);
 
         return vec2(pt.x + x, pt.y + y);
     }

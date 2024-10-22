@@ -15,8 +15,8 @@ function onCreate()
         makeGraphic('camShader', screenWidth, screenHeight)
         setSpriteShader('camShader', ShaderName)
         runHaxeCode([[
-            trace(game.getLuaObject('camShader').shader + ' Has Been Loaded!');                      
-            FlxG.game.setFilters([new ShaderFilter(game.getLuaObject('camShader').shader)]);
+            game.camHUD.setFilters([new ShaderFilter(game.getLuaObject('camShader').shader)]);
+            game.camGame.setFilters([new ShaderFilter(game.getLuaObject('camShader').shader)]);
         ]])
     end
 function opponentNoteHit(membersIndex, noteData, noteType, isSustainNote)

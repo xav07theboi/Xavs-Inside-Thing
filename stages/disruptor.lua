@@ -9,6 +9,7 @@ function onCreate()
 		setShaderFloat("disruptor", "uWaveAmplitude", 0.1)
 		setShaderFloat("disruptor", "uFrequency", 5)
 		setShaderFloat("disruptor", "uSpeed", 2)
+		setShaderFloat("disruptor", "uBottomProtection", 0.0)
 	end
 	thing = 1
 	total = 0
